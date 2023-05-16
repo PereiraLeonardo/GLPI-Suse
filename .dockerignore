@@ -1,0 +1,4 @@
+GLPI/ 
+mariadb.env
+.entrypoint.sh
+#docker container run --name glpi --link mariadb:mariadb -p 80:80 -d inerente/glpi-suse:v1
