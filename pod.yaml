@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: glpi-suse
+  labels:
+    name: glpi-suse
+spec:
+  containers:
+  - name: glpi-suse
+    image: inerente/glpi-suse:v1
+    resources:
+      limits:
+        memory: "4096Mi"
+        cpu: "1000m"
+    ports:
+      - containerPort: 80

@@ -1,0 +1,23 @@
+apiVersion: apps/v1 
+kind: ReplicaSet
+metadata:
+  name: meureplicaset
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: web
+  template:
+    metadata:
+      labels:
+        app: web
+    spec:
+      containers:
+      - name: web
+        image: inerente/glpi-suse:v1
+        resources:
+          limits:
+            memory: "4096Mi"
+            cpu: "1000m"
+        ports:
+          - containerPort: 80
