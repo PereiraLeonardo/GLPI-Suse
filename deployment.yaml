@@ -42,4 +42,22 @@ spec:
       targetPort: 80
       nodePort: 30000
   type: NodePort
+  
+  ---
+
+kind: PersistentVolume
+metadata:
+  name: nfs
+spec:
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadOnlyMany
+  storageClassName: nfsvol
+  persistentVolumeReclaimPolicy: Recycle
+  nfs:
+    server: 
+    path: "/"
+  mountOptions:
+    - nfsvers=4.2
     
