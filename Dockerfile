@@ -24,6 +24,7 @@ COPY ./start.sh /opt/
 COPY ./pics /srv/www/htdocs/glpi/pics
 COPY ./plugins /srv/www/htdocs/glpi/plugins
 COPY ./templates /srv/www/htdocs/glpi/templates
+#COPY ./config /srv/www/htdocs/config/
 RUN chmod +x /opt/start.sh
 
 ENTRYPOINT ["/opt/start.sh"]
